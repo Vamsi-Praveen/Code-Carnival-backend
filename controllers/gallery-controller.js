@@ -16,6 +16,7 @@ export const getGallery = async (req, res, next) => {
     }
 };
 export const insertGallery = async (req, res, next) => {
+    // console.log(req.body.imageurl);
     const { imageurl } = req.body;
     try {
         await Gallery.create(req.body)
