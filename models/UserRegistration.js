@@ -24,6 +24,10 @@ const userSchema=new Schema({
     coding_date:{
         type:String,
         required:true
+    },
+    _id:{
+        type:String,
+        required:true
     }
 },{collection:"users"});
 export default mongoose.model("UserRegistration",userSchema);
