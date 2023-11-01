@@ -14,7 +14,7 @@ const userSchema=new Schema({
         required:true
     },
     year:{
-        type:Number,
+        type:String,
         required:true
     },
     hackerrank:{
@@ -22,10 +22,6 @@ const userSchema=new Schema({
         required:true
     },
     coding_date:{
-        type:String,
-        required:true
-    },
-    _id:{
         type:String,
         required:true
     }

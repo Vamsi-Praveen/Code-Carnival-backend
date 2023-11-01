@@ -18,16 +18,18 @@ export const getAllRegistrations=async(req,res,next)=>{
 export const registerUser=async(req,res,next)=>{
     let existingUser;
     try{
-        const{rollno,hackerrank,coding_date,_id}=req.body;
+        const{rollno,hackerrank,coding_date}=req.body;
         existingUser=await UserRegistration.findOne({rollno:rollno,hackerrank:hackerrank,coding_date:coding_date});
         if(existingUser){
             res.status(300).json({message:"User already registered!"});
         }
         else{
+            console.log(req.body)
             await UserRegistration.create(req.body)
             .then((data)=>{
                 res.status(201).send(data);
             }).catch((err)=>{
+                console.log(err)
                 res.status(404).json({message:"User Registration data not inserted!"});
             });
         }
