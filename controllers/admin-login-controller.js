@@ -1,4 +1,4 @@
-import AdminLogin from "../models/AdminLogin";
+import AdminLogin from "../models/AdminLogin.js";
 import bcrypt from "bcryptjs";
 export const login=async(req,res,next)=>{
     const {_id,password}=req.body;

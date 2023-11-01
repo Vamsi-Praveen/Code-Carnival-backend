@@ -1,5 +1,5 @@
 import express from "express"
-import {contestav, download_excel} from "../controllers/downloadExcel";
+import {contestav, download_excel} from "../controllers/downloadExcel.js";
 const router = express.Router();
 
 router.get('/:id',download_excel)

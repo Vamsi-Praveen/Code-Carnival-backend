@@ -1,4 +1,4 @@
-import UserRegistration from "../models/UserRegistration";
+import UserRegistration from "../models/UserRegistration.js";
 import exceljs from "exceljs";
 export const download_excel = async (req, res) => {
     const date = req.params.id;

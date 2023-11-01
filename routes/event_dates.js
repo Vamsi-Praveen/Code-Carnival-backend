@@ -1,6 +1,6 @@
 import express from "express"
 
-import { addEventDate, getEvent } from "../controllers/eventdates"
+import { addEventDate, getEvent } from "../controllers/eventdates.js"
 
 const eventRoute  = express.Router();
 

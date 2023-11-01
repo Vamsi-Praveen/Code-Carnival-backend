@@ -1,5 +1,5 @@
 import express from "express";
-import { login,defaultPassword,resetPassword } from "../controllers/admin-login-controller";
+import { login,defaultPassword,resetPassword } from "../controllers/admin-login-controller.js";
 const admin_login_router=express.Router();
 admin_login_router.post("/login",login);
 admin_login_router.post("/defaultpassword",defaultPassword);

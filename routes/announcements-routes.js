@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllAnnouncements,addAnnouncements,deleteAnnouncements } from "../controllers/announcements-controller";
+import { getAllAnnouncements,addAnnouncements,deleteAnnouncements } from "../controllers/announcements-controller.js";
 const announcements_router=express.Router();
 announcements_router.get("/all",getAllAnnouncements);
 announcements_router.post("/add",addAnnouncements);

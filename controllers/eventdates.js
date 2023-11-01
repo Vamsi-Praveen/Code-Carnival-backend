@@ -1,4 +1,4 @@
-import EventDates from "../models/EventDates";
+import EventDates from "../models/EventDates.js";
 
 
 export const getEvent = async (req, res) => {

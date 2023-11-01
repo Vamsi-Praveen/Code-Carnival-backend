@@ -1,5 +1,5 @@
 import express from "express"
-import { addQuestions, getQuestions, getQuestionsById } from "../controllers/coding_questions";
+import { addQuestions, getQuestions, getQuestionsById } from "../controllers/coding_questions.js";
 const questions_router = express.Router();
 
 questions_router.get('/getquestions',getQuestions);

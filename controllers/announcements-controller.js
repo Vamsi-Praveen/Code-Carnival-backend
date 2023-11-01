@@ -1,4 +1,4 @@
-import Announcements from "../models/Announcements";
+import Announcements from "../models/Announcements.js";
 export const getAllAnnouncements=async(req,res,next)=>{
     try{
         await Announcements.find()

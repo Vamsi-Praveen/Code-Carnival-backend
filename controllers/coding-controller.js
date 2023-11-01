@@ -1,4 +1,4 @@
-import Coding from "../models/Coding";
+import Coding from "../models/Coding.js";
 export const getAllCoding = async (req, res, next) => {
     try {
         await Coding.find()

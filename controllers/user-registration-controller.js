@@ -1,4 +1,4 @@
-import UserRegistration from "../models/UserRegistration";
+import UserRegistration from "../models/UserRegistration.js";
 export const getAllRegistrations=async(req,res,next)=>{
     try{
         await UserRegistration.find()

@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllCoding,getDateCoding,insertCoding,deleteCoding } from "../controllers/coding-controller";
+import { getAllCoding,getDateCoding,insertCoding,deleteCoding } from "../controllers/coding-controller.js";
 const router=express.Router();
 router.get("/all",getAllCoding);
 router.get("/:id",getDateCoding);

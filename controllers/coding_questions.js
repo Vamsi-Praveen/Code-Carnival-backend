@@ -1,4 +1,4 @@
-import Coding_questions from "../models/Coding_questions";
+import Coding_questions from "../models/Coding_questions.js";
 
 export const getQuestions = async (req, res) => {
     try {
