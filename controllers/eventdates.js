@@ -5,10 +5,10 @@ export const getEvent = async (req, res) => {
     try {
         await EventDates.find()
             .then((data) => {
-                res.send(data).status(200)
+                return res.send(data).status(200)
             })
             .catch(err => {
-                res.status(400).send("Error")
+                return res.status(400).send("Error")
             })
     }
     catch (error) {
@@ -21,10 +21,10 @@ export const addEventDate = async (req, res) => {
         console.log(req.body)
         await EventDates.create(req.body)
             .then((data) => {
-                res.send(data).status(201)
+                return res.send(data).status(201)
             })
             .catch(err => {
-                res.status(400).send("Error occured ")
+                return res.status(400).send("Error occured ")
             })
     }
     catch (err) {

@@ -4,10 +4,10 @@ export const getGallery = async (req, res, next) => {
         await Gallery.find()
             .then((data) => {
                 if (data) {
-                    res.send(data);
+                    return res.send(data);
                 }
                 else {
-                    res.status(404).json({ message: "Gallery data not found!" });
+                    return res.status(404).json({ message: "Gallery data not found!" });
                 }
             });
     }
@@ -21,9 +21,9 @@ export const insertGallery = async (req, res, next) => {
     try {
         await Gallery.create(req.body)
             .then((data) => {
-                res.send(data);
+                return res.send(data);
             }).catch((err) => {
-                res.status(404).json({ message: "Gallery data not inserted!" });
+                return res.status(404).json({ message: "Gallery data not inserted!" });
             });
     }
     catch (err) {

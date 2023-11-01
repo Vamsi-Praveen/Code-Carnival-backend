@@ -1,40 +1,40 @@
 import UserRegistration from "../models/UserRegistration.js";
-export const getAllRegistrations=async(req,res,next)=>{
-    try{
+export const getAllRegistrations = async (req, res, next) => {
+    try {
         await UserRegistration.find()
-        .then((data)=>{
-            if(data){
-                res.send(data);
-            }
-            else{
-                res.status(404).json({message:"No user registrations found!"});
-            }
-        });
+            .then((data) => {
+                if (data) {
+                    return res.send(data);
+                }
+                else {
+                    return res.status(404).json({ message: "No user registrations found!" });
+                }
+            });
     }
-    catch(err){
+    catch (err) {
         return console.log(err);
     }
 };
-export const registerUser=async(req,res,next)=>{
+export const registerUser = async (req, res, next) => {
     let existingUser;
-    try{
-        const{rollno,hackerrank,coding_date}=req.body;
-        existingUser=await UserRegistration.findOne({rollno:rollno,hackerrank:hackerrank,coding_date:coding_date});
-        if(existingUser){
-            res.status(300).json({message:"User already registered!"});
+    try {
+        const { rollno, hackerrank, coding_date } = req.body;
+        existingUser = await UserRegistration.findOne({ rollno: rollno, hackerrank: hackerrank, coding_date: coding_date });
+        if (existingUser) {
+            return res.status(300).json({ message: "User already registered!" });
         }
-        else{
+        else {
             console.log(req.body)
             await UserRegistration.create(req.body)
-            .then((data)=>{
-                res.status(201).send(data);
-            }).catch((err)=>{
-                console.log(err)
-                res.status(404).json({message:"User Registration data not inserted!"});
-            });
+                .then((data) => {
+                    return res.status(201).send(data);
+                }).catch((err) => {
+                    console.log(err)
+                    return res.status(404).json({ message: "User Registration data not inserted!" });
+                });
         }
     }
-    catch(err){
+    catch (err) {
         return console.log(err);
     }
 };

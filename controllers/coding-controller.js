@@ -4,10 +4,10 @@ export const getAllCoding = async (req, res, next) => {
         await Coding.find()
             .then((data) => {
                 if (data) {
-                    res.send(data);
+                    return res.send(data);
                 }
                 else {
-                    res.status(400).json({ message: "Coding data not found!" });
+                    return res.status(400).json({ message: "Coding data not found!" });
                 }
             });
     }
@@ -24,7 +24,7 @@ export const getDateCoding = async (req, res, next) => {
                     return res.send(data);
                 }
                 else {
-                    res.status(300).json({ message: "Coding data not found!" });
+                    return res.status(300).json({ message: "Coding data not found!" });
                 }
             });
     }
@@ -39,13 +39,13 @@ export const insertCoding = async (req, res, next) => {
         if (!Objv) {
             await Coding.create(req.body)
                 .then((data) => {
-                    res.status(201).send(data);
+                    return res.status(201).send(data);
                 }).catch((err) => {
-                    res.status(404).json({ message: "Coding data not inserted!" });
+                    return res.status(404).json({ message: "Coding data not inserted!" });
                 });
         }
         else {
-            res.status(501).json({ message: "Coding data already exists on that date!" });
+            return res.status(501).json({ message: "Coding data already exists on that date!" });
         }
     }
     catch (err) {
