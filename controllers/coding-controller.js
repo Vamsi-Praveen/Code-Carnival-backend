@@ -41,11 +41,12 @@ export const insertCoding = async (req, res, next) => {
                 .then((data) => {
                     return res.status(201).send(data);
                 }).catch((err) => {
+                    console.log(err)
                     return res.status(404).json({ message: "Coding data not inserted!" });
                 });
         }
         else {
-            return res.status(501).json({ message: "Coding data already exists on that date!" });
+            return res.status(501).send("Coding data already exists on that date!" );
         }
     }
     catch (err) {
