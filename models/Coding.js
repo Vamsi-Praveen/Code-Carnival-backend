@@ -1,4 +1,4 @@
-import mongoose, { trusted } from "mongoose";
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const codingSchema = new Schema({
     _id: {
@@ -41,6 +41,10 @@ const codingSchema = new Schema({
             required: true
         }
     },
+    "completed": {
+        type: Boolean,
+        required: true
+    },
     dept_conducted: {
         type: String,
         required: true
@@ -49,10 +53,17 @@ const codingSchema = new Schema({
         type: String,
         required: true
     },
-    cordinator: {
+    coordinator: {
         type: String,
         requried: true
     },
+    questions: [
+        {
+            round: String,
+            name: String,
+            link: String,
+        }
+    ],
     participants: {
         type: String,
         required: true
@@ -64,6 +75,10 @@ const codingSchema = new Schema({
     report: {
         type: String,
         required: true
+    },
+    coordinator_image:{
+        type:String,
+        required:true
     }
 
 }, { collection: "coding" });
