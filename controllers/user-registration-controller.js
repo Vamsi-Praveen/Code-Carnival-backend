@@ -24,7 +24,6 @@ export const registerUser = async (req, res, next) => {
             return res.status(300).json({ message: "User already registered!" });
         }
         else {
-            console.log(req.body)
             await UserRegistration.create(req.body)
                 .then((data) => {
                     return res.status(201).send(data);
