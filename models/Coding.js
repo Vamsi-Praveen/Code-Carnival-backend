@@ -57,6 +57,10 @@ const codingSchema = new Schema({
         type: String,
         requried: true
     },
+    qualification:{
+        type:String,
+        required:true
+    },
     questions: [
         {
             round: String,

@@ -2,7 +2,6 @@ import UserRegistration from "../models/UserRegistration.js";
 import exceljs from "exceljs";
 export const download_excel = async (req, res) => {
     const date = req.params.id;
-    // console.log(date)
     try {
         const workbook = new exceljs.Workbook();
         const worksheet = workbook.addWorksheet("Users")
@@ -11,6 +10,7 @@ export const download_excel = async (req, res) => {
             { header: "RollNo", key: "rollno" },
             { header: "Department", key: "dept" },
             { header: "Year", key: "year" },
+            { header: "College", key: "college" },
             { header: "HackkerankId", key: "hackerrank" }
         ]
         const userdata = await UserRegistration.find({ "coding_date": date });
