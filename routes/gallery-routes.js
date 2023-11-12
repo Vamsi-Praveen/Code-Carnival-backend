@@ -1,6 +1,6 @@
 import express from "express";
 
-import { getGallery,insertGallery } from "../controllers/gallery-controller";
+import { getGallery,insertGallery } from "../controllers/gallery-controller.js";
 
 const galleryrRouter = express.Router();
 
