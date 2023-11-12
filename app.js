@@ -28,6 +28,11 @@ const format_date = (oldDate) => {
     return [p[2], p[1], p[0]].join("-")
 }
 
+mongoose.connect("mongodb+srv://admin:admin@cluster0.1zxtgjb.mongodb.net/codecarnival")
+    .then(() => app.listen(8000))
+    .then(() => console.log("Securely connected to MongoDB and listening to port 8000"))
+    .catch((err) => console.log(err));
+
 scheduleJob('0 2 * * *', async () => {
     try {
         let date = format_date(new Date().toISOString().split('T')[0]);
@@ -47,8 +52,3 @@ scheduleJob('0 2 * * *', async () => {
         console.log(err)
     }
 })
-
-mongoose.connect("mongodb+srv://admin:admin@cluster0.1zxtgjb.mongodb.net/codecarnival")
-    .then(() => app.listen(8000))
-    .then(() => console.log("Securely connected to MongoDB and listening to port 8000"))
-    .catch((err) => console.log(err));
