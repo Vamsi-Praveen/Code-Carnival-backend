@@ -20,7 +20,7 @@ app.use("/announcements", announcements_router);
 app.use("/gallery", galleryRouter);
 app.use("/admin", admin_login_router);
 app.use('/user/downloadexcel', excelrouter)
-app.use('/questions', questions_router);
+// app.use('/questions', questions_router);
 
 
 const format_date = (oldDate) => {
