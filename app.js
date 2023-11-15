@@ -33,7 +33,7 @@ mongoose.connect("mongodb+srv://admin:admin@cluster0.1zxtgjb.mongodb.net/codecar
     .then(() => console.log("Securely connected to MongoDB and listening to port 8000"))
     .catch((err) => console.log(err));
 
-scheduleJob('0 2 * * *', async () => {
+scheduleJob('0 9 * * *', async () => {
     try {
         let date = format_date(new Date().toISOString().split('T')[0]);
         const data = await Coding.findOne({ _id: date })
